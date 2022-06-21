@@ -13,7 +13,7 @@ class QRCodeCreator:
         img = qrcode.make(self.phrase)
         img.save(self.name_file)
 
-    def insert_name_file(self):
+    def insert_name_file(self) -> str:
         self.name_file: str = self.name_file + ".png"
         self.validate_name(self.name_file)
         return self.name_file

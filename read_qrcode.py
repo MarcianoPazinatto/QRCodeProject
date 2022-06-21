@@ -8,7 +8,7 @@ class ReadQRCode:
     def __init__(self, path_file):
         self.path_file = path_file
 
-    def decode_qr_code(self) -> NoReturn:
+    def decode_qr_code(self) -> str:
         try:
             img = cv2.imread(self.path_file)
 
@@ -16,5 +16,6 @@ class ReadQRCode:
                 print(code.type)
                 print(code.data)
                 print(code.data.decode("utf-8"))
-        except TypeError as a:
-            print(str(a))
+                return code.data.decode("utf-8")
+        except TypeError as ex:
+            print(str(ex))
